@@ -24,6 +24,7 @@ void loop()
   } else {
     digitalWrite(5,LOW);
   }  
+  //Resistor size 620 Ohms connected to NPN transistor Base
   if (digitalRead(2) == LOW){
     digitalWrite(12, HIGH);
   } else {
