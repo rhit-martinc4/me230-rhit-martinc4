@@ -78,8 +78,8 @@ void loop() {
         speedCount++;
         set7SegmentValue(speedCount);
       }
+      lastButtonState = buttonState;
     delay(5);
-    lastButtonState = buttonState;
     } 
   }
   if (digitalRead(4) == 0) {
@@ -88,9 +88,12 @@ void loop() {
   }
   if (analogRead(0) <= 512) { 
     analogWrite(3, speedCount * 50); 
-    digitalWrite(13, HIGH);
   } else { 
     analogWrite(3, 0);
-    digitalWrite(13, LOW);
+  }
+  if (analogRead(1) <= 512) { 
+    analogWrite(5, speedCount * 50); 
+  } else { 
+    analogWrite(5, 0);
   }
 }
