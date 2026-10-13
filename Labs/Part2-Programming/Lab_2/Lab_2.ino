@@ -71,6 +71,7 @@ void digitalWrite7Segment(uint8_t a, uint8_t b, uint8_t c, uint8_t d, uint8_t e,
 
 
 void loop() {
+  /*
   buttonState = digitalRead(2);
   if (speedCount < 5) {    
     if (buttonState != lastButtonState) {
@@ -95,5 +96,10 @@ void loop() {
     analogWrite(5, speedCount * 50); 
   } else { 
     analogWrite(5, 0);
+  }
+  */
+  for (int k = 0; k <= 10; k++) { 
+    set7SegmentValue(k);
+    delay(1000);
   }
 }
